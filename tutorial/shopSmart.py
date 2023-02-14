@@ -29,12 +29,12 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    bestShop = ""
+    bestShop = None
     cost = 0
     for idx,s in enumerate(fruitShops):
         tmp = s.getPriceOfOrder(orderList)
         if idx == 0 or cost > tmp:
-            bestShop = s.__str__()
+            bestShop = s
             cost = tmp
     return bestShop
 
