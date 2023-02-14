@@ -29,9 +29,14 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    "*** YOUR CODE HERE ***"
-    return None
-
+    bestShop = ""
+    cost = 0
+    for idx,s in enumerate(fruitShops):
+        tmp = s.getPriceOfOrder(orderList)
+        if idx == 0 or cost > tmp:
+            bestShop = s.__str__()
+            cost = tmp
+    return bestShop
 
 if __name__ == '__main__':
     "This code runs when you invoke the script from the command line"
